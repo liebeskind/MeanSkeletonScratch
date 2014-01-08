@@ -1,8 +1,3 @@
-
-/**
- * Module dependencies.
- */
-
 var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
@@ -10,6 +5,10 @@ var http = require('http');
 var path = require('path');
 
 var app = express();
+
+// mongo driver
+var Mongoose = require('mongoose');
+var db = Mongoose.createConnection('localhost', 'skeletonapp');
 
 // all environments
 app.set('port', process.env.PORT || 3000);
